@@ -14,24 +14,21 @@ namespace _3月19日上机_01
     delegate double CalcD(float a, float b, float c);
     class Program
     {
-        static double? CalcSum(int? x, int? y)
+        static double CalcSum(float x, float y, float z)
         {
-            return x + y;
+            return x + y + z;
         }
-        static double? CalcMul(int? x, int? y)
+        static double CalcMul(float x, float y, float z)
         {
-            return x * y;
+            return x * y * z;
         }
         static void Main(string[] args)
         {
-            CalcD <int?> cd = CalcSum;
+            CalcD cd = CalcSum;
             cd += CalcMul;
             Console.WriteLine(cd(5.1f, 2.0f, 0.1f));
             cd -=CalcMul;
             Console.WriteLine(cd(5.1f, 2.0f, 0.1f));
-            
-
-
         }
     }
 }
@@ -80,7 +77,10 @@ namespace _3月19日上机_03
         {
             Action<string[]> ac = CalcJoin;
             ac += CalcConcat;
-            ac(new[] { "spl", "cs" });
+            string i3 = "\"spl\",\"cs\"";
+            Console.WriteLine(i3);
+            string i4 = @"""spl""""cs""";
+            Console.WriteLine(i4);
         }
     }
 }
